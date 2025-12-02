@@ -85,26 +85,41 @@
         }
         
         .links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.8rem 2.5rem;
             margin-top: 1.5rem;
         }
         
         .btn {
             display: inline-block;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 0.5rem;
             background-color: #f5f5f5;
             color: #333;
             text-decoration: none;
             border-radius: 4px;
             border: 1px solid #ddd;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            font-size: 0.9rem;
+            transform: scale(1);
+            transform-origin: center;
+            line-height: 1.4;
+            width: 100%;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            word-break: break-word;
         }
         
         .btn:hover {
             background-color: #e9e9e9;
             border-color: #ccc;
+            transform: scale(1.05);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            z-index: 1;
+            position: relative;
         }
         
         .btn-primary {
@@ -116,6 +131,7 @@
         .btn-primary:hover {
             background-color: #555;
             border-color: #555;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
         }
         
         footer {
@@ -137,7 +153,13 @@
             }
             
             .links {
-                flex-direction: column;
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .btn {
+                min-height: 60px;
+                padding: 0.8rem 1rem;
             }
         }
     </style>
@@ -168,9 +190,9 @@
     <section id="links">
         <h2>My...</h2>
         <div class="links">
-            <a href="ziyang_cv.pdf" class="btn btn-primary"> CV (PDF)</a>
-            <a href="ziyang_mt.pdf" class="btn btn-primary"> Notes on Morse Theory (PDF)</a>
-            <a href="ziyang_lt+rf.pdf" class="btn btn-primary"> Notes on Lie Algebra & Ricci Flow (PDF)</a>
+            <a href="ziyang_cv.pdf" class="btn btn-primary"> CV</a>
+            <a href="ziyang_mt.pdf" class="btn btn-primary"> Notes on Morse Theory</a>
+            <a href="ziyang_lt+rf.pdf" class="btn btn-primary"> Notes on Lie Algebra & Ricci Flow</a>
             <a href="ziyang_ii.pdf" class="btn btn-primary"> 2025 Spring Supervised Reading Report</a>
             <a href="ziyang_fm.pdf" class="btn btn-primary"> 2024 Fall Supervised Reading Report</a>
             <a href="ziyang_fm_r.pdf" class="btn btn-primary"> Revised 2024 Fall Report: Fary Milnor Theorem</a>
